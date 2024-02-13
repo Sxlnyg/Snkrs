@@ -40,7 +40,7 @@ def main():
     elif choice == '5':
         key_func = lambda x: x['publish_date']
     else:
-        print("Invalid choice.")
+        print("Helytelen megadott szám.")
         return
 
     sort_and_display_sneakers(sneakers, key_func)
