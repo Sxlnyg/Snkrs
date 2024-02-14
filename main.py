@@ -30,20 +30,21 @@ def main():
     choice = input("Add meg a lehetőség számát! ")
 
     if choice == '1':
-        key_func = lambda x: x['title']
+        answer = 'title'
     elif choice == '2':
-        key_func = lambda x: x['color']
+        answer = 'color'
     elif choice == '3':
-        key_func = lambda x: x['full_price']
+        answer = 'full_price'
     elif choice == '4':
-        key_func = lambda x: x['current_price']
+        answer = 'current_price'
     elif choice == '5':
-        key_func = lambda x: x['publish_date']
+        answer = 'publish_date'
     else:
-        print("Invalid choice.")
+        print("Helytelen megadott érték.")
         return
+    key_function = lambda x: x[answer]
 
-    sort_and_display_sneakers(sneakers, key_func)
+    sort_and_display_sneakers(sneakers, key_function)
 
 
 main()
