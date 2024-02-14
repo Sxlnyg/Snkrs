@@ -26,25 +26,22 @@ def main():
     file_name = 'sneakers.csv'
     sneakers = read_sneakers_data(file_name)
 
-    print(
-        "Válasz, melyik szempont alapján rendezzem a cipőket? \n 1 - title, \n 2 - color, \n 3 - full price, \n 4 - current price,  \n 5 - publish date ")
+    print("Válasz, melyik szempont alapján rendezzem a cipőket? \n 1 - title, \n 2 - color, \n 3 - full price, \n 4 - current price,  \n 5 - publish date ")
     choice = input("Add meg a lehetőség számát! ")
 
     if choice == '1':
-        answer = 'title'
+        key_func = lambda x: x['title']
     elif choice == '2':
-        answer = 'color'
+        key_func = lambda x: x['color']
     elif choice == '3':
-        answer = 'full_price'
+        key_func = lambda x: x['full_price']
     elif choice == '4':
-        answer = 'current_price'
+        key_func = lambda x: x['current_price']
     elif choice == '5':
-        answer = 'publish_date'
+        key_func = lambda x: x['publish_date']
     else:
-        print("Helytelen megadott érték.")
+        print("Invalid choice.")
         return
-
-    key_func = lambda x: x[answer]
 
     sort_and_display_sneakers(sneakers, key_func)
 
